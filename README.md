@@ -105,7 +105,8 @@ To drop a database simply execute:
                 DROP DATABASE dbname; 
 
 ![drop database](images/dropdb.png)
-Be very careful to __drop a database/table__. Because you can not even undo this.
+
+__BE CAREFUL__. Be extra careful to __drop a database/table__. Because you can not even undo this. Is is dangerous because you could have a 5/10y ears of data in a database, so if you run it, you will loose everything. __BE CAREFUL__
 
 For our learning I have created the __testdb__ again.
 
@@ -128,3 +129,15 @@ Here, dbname = The Datbase you want to connect. In our case, it is testdb.
 </ol>
 
 As you can see, now we are connected to our __testdb__ database.
+
+## Create Tables
+Basic syntax of CREATE TABLE statement is as follows −
+
+            CREATE TABLE table_name(
+               column1 datatype,
+               column2 datatype,
+               .....
+               columnN datatype,
+               PRIMARY KEY( one or more columns )
+            );
+Check, the list of DataTypes available in Postgres [Clcik Here](https://www.postgresql.org/docs/12/datatype.html)
