@@ -35,7 +35,7 @@ Now,run the command to check the status of PostgreSQL service
 You should see something like: 
 
 ![status](images/status.png)
-If the postgresql service is not active, to start type execute:
+If the postgresql service is not active, to start it:
 
 > $ sudo systemctl start postgresql
 
@@ -57,7 +57,7 @@ NOW, you can access the Postgres prompt by typing:
 
 You have landed at the following SQL prompt − postgres=#
 
-OR, you can directly access the SQL prompt by executing:
+Another way to connect to the Postgres prompt is to run the __psql__ command as the postgres account directly with sudo:
 >$ sudo -iu postgres psql 
 
 ![SQL prompt](images/prompt.png)
@@ -72,18 +72,21 @@ To exit out of the PostgreSQL prompt, run the following:
 
 ![exit](images/exit.png)
 
-TO exit out of __postgres@ubuntu:~$__ , run exit or CTRL+d
+This will bring you back to the postgres Linux command prompt(__postgres@ubuntu:~$__ ). To return to your regular system user, run the exit or CTRL+d command:
 
-![exit1](images/exit1.png)
+![exit](images/exit1.png)
 
-# Create Database
+# SQL Commands
+Let's learn some SQL COMMANDS. You can go to the official docs for commands which is   [OFFICIAL SQL COMMANDS](https://www.postgresql.org/docs/12/sql-commands.html)
+
+## Create Database
 
 Before creating a database let's see our List of databases. To see this just simply type __\l__, this will list out your databases and others information
 
 ![list](images/list.png)
 
 Here you can see I have 5 databases(I created shihab and test databases before writmg this docs)
-Let's create a new database for this docs, let me name it testdb.
+Let's create a new database for this docs, let me name it testdb(you can name it whatever you want).
 
 The __syntax__ is: 
                 
@@ -95,3 +98,33 @@ Don't forget to put the semicolon(;) at the end.
 
 ![create database](images/createdb.png)
 You can see we just created a datbase __testdb__ .
+
+## Drop Datbase
+To drop a database simply execute:
+
+                DROP DATABASE dbname; 
+
+![drop database](images/dropdb.png)
+Be very careful to __drop a database/table__. Because you can not even undo this.
+
+For our learning I have created the __testdb__ again.
+
+## Connect to Datbase
+We have crated a datbase name __testdb__ so far, let's connect to it( till now we are connected to postgres database).
+There are two ways to connect to a database.
+<ol>
+1. Type following from your regular user mode
+
+            psql -h localhost -p 5432 -U postgres testdb  
+It will ask you the password of postgres; which is __postgres__ by default. In the above command -h option is for hostname(here it is localhost becuase we are connecting to a local database, if you want to connect to a remote database then put the ip address here), -p is the port number(default is 5432), -U is for username and then the database name that we want to connect.
+
+![connection type 1](images/con1.png)
+2. The other way, which is the simplest way is to execute the following command from __PostgreSQL prompt__
+
+            \c dbname
+Here, dbname = The Datbase you want to connect. In our case, it is testdb.
+
+![connection type 2](images/con2.png)
+</ol>
+
+As you can see, now we are connected to our __testdb__ database.
