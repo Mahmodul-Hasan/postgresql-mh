@@ -7,6 +7,7 @@ In this repo, I am going to share my learning about PostgreSQL Database and anyt
 
 **দয়া করে বানান ভুল উপেক্ষা করবেন।
 
+![postgresql logo](images/postgres.png)
 
 # WHAT IS PostgreSQL
 <p> PostgreSQL is a powerful, open source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads. PostgreSQL comes with many features aimed to help developers build applications, administrators to protect data integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the dataset. In addition to being free and open source, PostgreSQL is highly extensible. For example, you can define your own data types, build out custom functions, even write code from different programming languages without recompiling your database!
@@ -23,7 +24,27 @@ Follow the given steps to install PostgreSQL on your Linux machine.
 >$ sudo apt update
 
 Then, install the Postgres package along with a -contrib package that adds some additional utilities and functionality:
->sudo apt install postgresql postgresql-contrib
+>$ sudo apt install postgresql postgresql-contrib
+
+So, our installation is now complete. 
+
+### Start the PostgreSQL Service
+Now,run the command to check the status of PostgreSQL service
+> $ sudo systemctl status postgresql
+> 
+You should see something like: 
+
+![status](images/status.png)
+If the postgresql service is not active, to start type execute:
+
+> $ sudo systemctl start postgresql
+
+Now check again if it is active or not.
+If you want to stop the service(it is recommended to keep the service active/start to work with the database): 
+
+>$ sudo systemctl stop postfresql
+
+
 
 
 
