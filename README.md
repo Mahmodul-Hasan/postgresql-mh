@@ -110,7 +110,7 @@ __BE CAREFUL__. Be extra careful to __drop a database/table__. Because you can n
 
 For our learning I have created the __testdb__ again.
 
-## Connect to Datbase
+## Connect to Our Datbase
 We have crated a datbase name __testdb__ so far, let's connect to it( till now we are connected to postgres database).
 There are two ways to connect to a database.
 <ol>
@@ -134,10 +134,9 @@ As you can see, now we are connected to our __testdb__ database.
 Basic syntax of CREATE TABLE statement is as follows −
 
             CREATE TABLE table_name(
-               column1 datatype,
-               column2 datatype,
+               column1 + datatype,+ constraints if any,
+               column2 + datatype,+ constraints if any,
                .....
-               columnN datatype,
-               PRIMARY KEY( one or more columns )
+               columnN + datatype,+ constraints if any
             );
 Check, the list of DataTypes available in Postgres [Clcik Here](https://www.postgresql.org/docs/12/datatype.html)
