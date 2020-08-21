@@ -35,6 +35,7 @@ Now,run the command to check the status of PostgreSQL service
 You should see something like: 
 
 ![status](images/status.png)
+
 If the postgresql service is not active, to start it:
 
 > $ sudo systemctl start postgresql
@@ -97,7 +98,8 @@ It is good to use the upper case letter for SQL Commands.
 Don't forget to put the semicolon(;) at the end. 
 
 ![create database](images/createdb.png)
-You can see we just created a datbase __testdb__ .
+
+We just created a datbase __testdb__ .
 
 ## Drop Datbase
 To drop a database simply execute:
