@@ -175,7 +175,7 @@ Let's create another table __person__ with some constraint:
                id BIGSERIAL PRIMARY KEY,
                first_name VARCHAR(50) NOT NULL,
                last_name VARCHAR(50) NOT NULL,
-               gernder VARCHAR(7) NOT NULL,
+               gender VARCHAR(7) NOT NULL,
                date_of_birth DATE NOT NULL,
                email VARCHAR(100) 
             );
@@ -189,5 +189,17 @@ I want you to look [here](https://www.postgresql.org/docs/8.1/ddl-constraints.ht
 
 ## Insert Records 
 
+Basic Syntax of INSERT into a table syntax is as follows: 
 
+            INSERT INTO table_name(column1, column2, …)
+            VALUES (value1, value2, …);
+
+Let me insert some data into our person table:
+
+![insert](images/insert.png)
+
+**NOTICE, I didn't mention the column name id when inserting records into person, but it is still showing id values, figure it out why??
+
+RETURNING * is optional, use it if you want to return just some information of the inserted row. 
+OR you can just read the data of table(using SELECT QUERY).
 
