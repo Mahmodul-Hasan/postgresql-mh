@@ -289,5 +289,16 @@ For now , let's sort our employees table based on emplyees first_name ascending 
 
 Since the ASC option is the default, you can omit it in the ORDER BY clause. You can omit LIMIT clause if you want retrive all records.
 
+## DISTINCT
+
+The DISTINCT clause is used in the SELECT statement to remove duplicate rows from a result set. The DISTINCT clause keeps one row for each group of duplicates. The DISTINCT clause can be applied to one or more columns in the select list of the SELECT statement.
+
+
+         SELECT
+         DISTINCT column(s)
+         FROM
+         table_name; 
+
+
 
 
