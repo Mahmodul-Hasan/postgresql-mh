@@ -240,3 +240,54 @@ Alright, so far we have learned how to create a database, create a table and how
             SELECT * FROM table_name;
 
 If you want to read the records of every column, use * , or if you want to read the data of specific column than mention the name of the column before FROM clasue. AS SIMPLE AS THAT.
+
+Let's see an example : 
+
+            SELECT * from employees;
+            to see only first_name and date_of_birth
+            SELECT first_name, date_of_birth FROM employees;
+
+Now, let's say we don't want to see every records that is in our table. We just want to see top 5 records, to do that :
+
+            SELECT column FROM table LIMIT N;
+            OR,
+            SELECT column FROM TABLE FIRST N ROWS ONLY;
+
+HERE N = number of records you want to retrieve.
+
+![limited rows](images/limit.png)
+
+## WHERE clause
+
+The WHERE clause appears right after the FROM clause of the SELECT statement.  The WHERE clause uses the condition to filter the rows returned from the SELECT clause.
+
+The Syntax is : 
+
+            SELECT select_list
+            FROM table_name
+            WHERE condition; 
+
+Now, let's say we want to know the first_name of employees whose country_of_birth is United States: 
+
+![where clause](images/where.png)
+
+
+## ORDER BY (Sort our DATA)
+
+Now, let's say we want to sort out our data. To do so, we have __ORDER BY__ clause. When you query data from a table, the SELECT statement returns rows in an unspecified order. To sort the rows of the result set, you use the ORDER BY clause in the SELECT statement.
+The Syntax is : 
+
+            SELECT column-list    
+            FROM table_name    
+            [WHERE condition]    
+            [ORDER BY column1, column2, .. columnN] [ASC | DESC];    
+
+
+For now , let's sort our employees table based on emplyees first_name ascending :
+
+![order](images/order.png)
+
+Since the ASC option is the default, you can omit it in the ORDER BY clause. You can omit LIMIT clause if you want retrive all records.
+
+
+
