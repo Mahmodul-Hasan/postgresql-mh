@@ -203,3 +203,15 @@ Let me insert some data into our person table:
 RETURNING * is optional, use it if you want to return just some information of the inserted row. 
 OR you can just read the data of table(using SELECT QUERY).
 
+*** TRY to INSERT NULL values in the null column and see what happens.
+
+#### Insert record from another thable
+
+            INSERT INTO table1(column1, column2, …)
+            SELECT column(s) FROM table2;
+Remember, we created a table contacts??? Now let me insert some data into it from another table I created.
+
+![con](images/con.png)
+
+
+
