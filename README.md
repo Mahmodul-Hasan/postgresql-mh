@@ -142,3 +142,47 @@ Basic syntax of CREATE TABLE statement is as follows −
                columnN + datatype,+ constraints if any
             );
 Check, the list of DataTypes available in Postgres [Clcik Here](https://www.postgresql.org/docs/12/datatype.html)
+
+So why Table is important, for example, we want to save a new contact in our phone, which information do we need to save a new contact? For example, we need a person firs_name, last_name, Phone_number, email, address etc. 
+Now Let's create a new table __contacts__ with such information: 
+
+            CREATE TABLE contacts (
+               first_name VARCHAR(50) NOT NULL,
+               last_name VARCHAR(50),
+               phone_number VARCHAR(11) NOT NULL,
+               email VARCHAR(100),
+               address VARCHAR(100)
+            );
+
+![contact](images/contact.png)
+
+
+Here, you can see, we have created a table named __contacts__ without any constraints whatsoever. Let us modify this table. So we can modify a table using __ALTER__ command, you will see it a bit later. For now, let me drop this table(BE CARFULL to DROP a table/anything) and create it again with a NOT NULL constraint.
+
+We are using __NOT NULL__ with first_name and phone_number columns, it is because we don't want any NULL value for a person name and his/her number, other field can contain null value. You can use UNIQUE with first_name/phone_number column if you want to restrict the two persons cannot have same first_name/phone_number. For simplicity, I am ony using NOT NULL(I recommend you to play around with different constraints while practicing).
+
+![contact](images/contacts.png)
+
+
+ If you don't understand the difference between a Non Zero, Zero, Null and unidentified values, please have look at the picture below, you will understand.
+
+![null](images/null.png)
+
+Let's create another table __person__ with some constraint: 
+
+            CREATE TABLE person (
+               id BIGSERIAL PRIMARY KEY,
+               first_name VARCHAR(50) NOT NULL,
+               last_name VARCHAR(50) NOT NULL,
+               gernder VARCHAR(7) NOT NULL,
+               date_of_birth DATE
+            );
+
+## Constraints 
+I want you to look [here](https://www.postgresql.org/docs/8.1/ddl-constraints.html)  if you want to know details about all the constraints. It is very important to know the differences.
+
+ Primary Key: Uniquely identifies recordes, a primary key is both NOT NULL and UNIQUE, it means primary key column values can not have null value and every value is different. A table can have one and only primary key(it is applied on column or group of columns)
+
+ UNIQUE Key: Unique constraints ensure that the data contained in a column or a group of columns is unique with respect to all the rows in the table. By default, it may contain null values. A table can have multiple/more than one Unique Keys.
+
+
