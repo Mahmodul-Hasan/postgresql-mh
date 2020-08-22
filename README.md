@@ -225,8 +225,18 @@ For our practice I am going to insert 100 more records into employees table, don
 
             \i [your file location];
             in my case this is as follows: 
-            \i /home/Documents/sql/employees.sql
+            shihab=# \i /home/shihab/Documents/employees.sql;
+
 
 You are good to go. Now, read(SELECT Query) the data of this table you will see 100 records in employees table
 
 
+## SELECT FROM a table(READING data from table)
+
+Alright, so far we have learned how to create a database, create a table and how to insert some records into it. Now, let's learn how to READ the data from a table. The syntax is as follows: 
+
+            SELECT column1, column2, columnN FROM table_name;
+            OR,
+            SELECT * FROM table_name;
+
+If you want to read the records of every column, use * , or if you want to read the data of specific column than mention the name of the column before FROM clasue. AS SIMPLE AS THAT.
