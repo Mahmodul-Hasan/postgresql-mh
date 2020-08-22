@@ -205,13 +205,28 @@ OR you can just read the data of table(using SELECT QUERY).
 
 *** TRY to INSERT NULL values in the null column and see what happens.
 
-#### Insert record from another thable
+### Insert record from another table
+
+We can acctually insert records from another table to a table.
+
 
             INSERT INTO table1(column1, column2, …)
             SELECT column(s) FROM table2;
+
 Remember, we created a table contacts??? Now let me insert some data into it from another table I created.
+
+**Make sure to match the datatype of both tables. 
 
 ![con](images/con.png)
 
+Now play arround it. Try to insert data from another table to a new table with mismatch datatype.
+
+For our practice I am going to insert 100 more records into employees table, don't worry you don't need to execute INSERT command 100 times. You will get the sql file from my __sql folder__. Just copy it and run them into your terminal. Or you can execute the deownloaded file like following from your prompt : 
+
+            \i [your file location];
+            in my case this is as follows: 
+            \i /home/Documents/sql/employees.sql
+
+You are good to go. Now, read(SELECT Query) the data of this table you will see 100 records in employees table
 
 
