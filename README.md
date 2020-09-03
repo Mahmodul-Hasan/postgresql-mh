@@ -259,13 +259,15 @@ HERE N = number of records you want to retrieve.
 
 ## WHERE clause
 
-The WHERE clause appears right after the FROM clause of the SELECT statement.  The WHERE clause uses the condition to filter the rows returned from the SELECT clause.
+The WHERE clause appears right after the FROM clause of the SELECT statement.  The WHERE clause uses the condition to __filter__ the rows returned from the SELECT clause.
 
 The Syntax is : 
 
-            SELECT select_list
-            FROM table_name
-            WHERE condition; 
+      SELECT column1, column2, columnN
+      FROM table_name
+      WHERE [search_condition]
+
+You can specify a search_condition using comparison or logical operators. like >, <, =, LIKE, NOT, etc.
 
 Now, let's say we want to know the first_name of employees whose country_of_birth is United States: 
 
@@ -277,10 +279,10 @@ Now, let's say we want to know the first_name of employees whose country_of_birt
 Now, let's say we want to sort out our data. To do so, we have __ORDER BY__ clause. When you query data from a table, the SELECT statement returns rows in an unspecified order. To sort the rows of the result set, you use the ORDER BY clause in the SELECT statement.
 The Syntax is : 
 
-            SELECT column-list    
-            FROM table_name    
-            [WHERE condition]    
-            [ORDER BY column1, column2, .. columnN] [ASC | DESC];    
+         SELECT column-list    
+         FROM table_name    
+         [WHERE condition]    
+         [ORDER BY column1, column2, .. columnN] [ASC | DESC];    
 
 
 For now , let's sort our employees table based on emplyees first_name ascending :
@@ -299,6 +301,14 @@ The DISTINCT clause is used in the SELECT statement to remove duplicate rows fro
          FROM
          table_name; 
 
+For understanding, I want you to execute the following to query, after that you will get the idea 
 
+> select country_of_birth from employees;
+
+> select DISTINCT country_of_birth from employees;
+
+![distinct](images/dis.png)
+
+This is an another example, don't think about COUNT for now, I'll elaborate it later. The first returnd 100 as we have 100 employees, but when we are using DISTINT it returned 98, it means we have 98 unique first_name and there are 2 duplicate names.
 
 
